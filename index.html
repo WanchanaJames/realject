@@ -1,36 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <title>Quests</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ระบบการกิจครอบครัว</title>
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .login-card {
+      max-width: 400px;
+      width: 100%;
+      border-radius: 1rem;
+      box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+    }
+    .login-card .form-control {
+      border-radius: 0.5rem;
+    }
+    .login-card button {
+      border-radius: 0.5rem;
+    }
+    .icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+  </style>
 </head>
 <body>
-  <div class="card text-center m-5 container-fluid d-flex flex-column align-items-center justify-content-center min-vh-50 py-5" >
-  <div class="card-header">
-    login
-  </div>
-  <div class="card-body">
+
+  <div class="card login-card p-4 text-center">
+    <div class="icon">👪</div>
+    <h4 class="fw-bold">ระบบการกิจครอบครัว</h4>
+    <p class="text-muted small">
+      ช่วยให้ครอบครัวจัดการงานและสร้างบรรยากาศที่อบอุ่นยิ่งขึ้น
+    </p>
+
     <form>
-  <div class="mb-3">
-    <label for="InputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-  </div>
-    <label for="inputPassword5" class="form-label">Password</label>
-    <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
-    <div id="passwordHelpBlock" class="form-text">
-    Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
-    </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="Check1">
-    <label class="form-check-label" for="Check1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">ตกลง</button>
+      <div class="mb-3 text-start">
+        <label for="email" class="form-label">อีเมล</label>
+        <input type="email" class="form-control" id="email" placeholder="your@email.com">
+      </div>
+
+      <div class="mb-3 text-start">
+        <label for="password" class="form-label">รหัสผ่าน</label>
+        <input type="password" class="form-control" id="password" placeholder="รหัสผ่านของคุณ">
+      </div>
+
+      <button type="submit" class="btn btn-dark w-100">เข้าสู่ระบบ</button>
     </form>
-</div>
-</div>
+
+    <div class="mt-3">
+      <span class="text-muted">ยังไม่มีบัญชี? </span>
+      <a href="register.html" class="text-decoration-none">สร้างบัญชีใหม่</a>
+    </div>
+
+    <p class="mt-4 mb-0 text-muted small">
+      © 2025 ระบบการกิจครอบครัว - สร้างขึ้นเพื่อให้ทุกคนมีความสุข
+    </p>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
