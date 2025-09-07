@@ -16,7 +16,7 @@ class BaseRepo():
     @staticmethod
     def insert(db: Session, model: Generic[T]):
         db.add(model)
-        db.commid()
+        db.commit()
         db.refresh(model)
 
 class UsersRepo(BaseRepo):
@@ -40,4 +40,4 @@ class JWTRepo():
             decode_token = jwt.decode(token, SECRET_KEY, algorithms = [ALGORITHM])
             return decode_token if decode_token['expires'] >= datetime.time() else None
         except:
-            return()
+            return{}
