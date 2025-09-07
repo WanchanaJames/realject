@@ -3,12 +3,12 @@ from sqlalchemy.orm import Session
 
 from datetime import datetime,timedelta
 from jose import JWTError, jwt
-from config import SECRET_KEY, ALGORITHM
+from config import SECRET_KEY_, ALGORITHM
 
 from fastapi import Depends, Request, HTTPException
 from fastapi.security import HTTPBearer, HTTPBasicCredentials
 
-T = Typevar('T')
+T = TypeVar('T')
 
 # users
 
@@ -26,7 +26,7 @@ class UsersRepo(BaseRepo):
 
 #token
 class JWTRepo():
-    def generate_token(date: dict, expires_delta: Opion[timedelta] = None):
+    def generate_token(date: dict, expires_delta: Optional[timedelta] = None):
         to_encode = data.copy()
         if expires_delta:
             expire = datetime.utcnow() + expires_detla

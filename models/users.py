@@ -24,7 +24,7 @@ class ResponseSchema(BaseModel):
     code: str
     status: str
     message: str
-    result: Optional(T) = None
+    result: Optional[T] = None
 #token
 class TokenResponse(BaseModel):
     access_token: str

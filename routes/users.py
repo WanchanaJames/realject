@@ -1,10 +1,10 @@
 from fastapi import APIRouter, Depends
-from model.users import ReponseSchema, TokenReponse, Register, Login
+from models.users import ResponseSchema, TokenResponse, Register, Login
 from sqlalchemy.orm import Session
 from config import get_db
 from passlib.context import CryptContext
 from repository.users import UsersRepo, JWTRepo
-from table.users import Users
+from tables.users import Users
 
 router = APIRouter(
     tags = {"Autherication"}
@@ -29,8 +29,9 @@ async def signup(request: Register,db: Session = Depends(get_db)):
     except Exception as error:
         print(error.args)
         return ReponseSchema(code = "500", status = "Error", message = "Internal Server Error").dict(exclude_none = True)
+        
 @router.post('/login')
-async def login(request: Login, db: Session = Depends(get_dn)):
+async def login(request: Login, db: Session = Depends(get_db)):
     try:
         _user = UsersRepo.find_by_username(db, Users, request.username)
 
@@ -39,6 +40,8 @@ async def login(request: Login, db: Session = Depends(get_dn)):
 
         token = JWTRepo.generate_token({'sub': _user.username})
         return ReponseSchema(code = "200", status = "ok", message = "Seccess login", result = TokenResponse(access_token = token, token_type = "bearer").dict(exclude_none = True))
+    
     except Exception as error:
         error_message = str(error.args)
-        print(error_mes)
+        print(error_message)
+        return ReponseSchema(code = "500", status = "Error", message = "Internal Server Error").dict(exclude_none = True)
