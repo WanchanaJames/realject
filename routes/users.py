@@ -19,7 +19,7 @@ async def signup(request: Register,db: Session = Depends(get_db)):
         #insert data
         _user = Users(        
             username = request.username,
-            password = request.password,
+            password = pwd_context.hash(request.password),
             email = request.email,
             phone_number = request.phone_number,
             first_name = request.first_name,

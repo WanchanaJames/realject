@@ -11,7 +11,6 @@ class Login(BaseModel):
 
 #regis
 class Register(BaseModel):
-    id: str
     username: str
     password: str
     email: str

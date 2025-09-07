@@ -1,9 +1,9 @@
 from typing import TypeVar, Generic, Optional
 from sqlalchemy.orm import Session
 
-from datetime import datetime,timedelta
+from datetime import datetime, timedelta
 from jose import JWTError, jwt
-from config import SECRET_KEY_, ALGORITHM
+from config import SECRET_KEY, ALGORITHM
 
 from fastapi import Depends, Request, HTTPException
 from fastapi.security import HTTPBearer, HTTPBasicCredentials
@@ -22,11 +22,11 @@ class BaseRepo():
 class UsersRepo(BaseRepo):
     @staticmethod
     def find_by_username(db: Session, model: Generic[T], username: str):
-        return db.querry(model).filter(model.uesrname == username).first()
+        return db.query(model).filter(model.username == username).first()
 
 #token
 class JWTRepo():
-    def generate_token(date: dict, expires_delta: Optional[timedelta] = None):
+    def generate_token(data: dict, expires_delta: Optional[timedelta] = None):
         to_encode = data.copy()
         if expires_delta:
             expire = datetime.utcnow() + expires_detla
