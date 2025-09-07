@@ -19,3 +19,13 @@ class Register(BaseModel):
 
     first_name: str
     last_name: str
+#respon
+class ResponseSchema(BaseModel):
+    code: str
+    status: str
+    message: str
+    result: Optional(T) = None
+#token
+class TokenResponse(BaseModel):
+    access_token: str
+    token_type: str
