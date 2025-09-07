@@ -19,7 +19,7 @@ async def signup(request: Register,db: Session = Depends(get_db)):
         #insert data
         _user = Users(        
             username = request.username,
-            password = request.passwoed,
+            password = request.password,
             email = request.email,
             phone_number = request.phone_number,
             first_name = request.first_name,
@@ -28,7 +28,7 @@ async def signup(request: Register,db: Session = Depends(get_db)):
         return ResponseSchema(code = "200", status = "Ok", message = "Success save data").dict(exclude_none = True)
     except Exception as error:
         print(error.args)
-        return ReponseSchema(code = "500", status = "Error", message = "Internal Server Error").dict(exclude_none = True)
+        return ResponseSchema(code = "500", status = "Error", message = "Internal Server Error").dict(exclude_none = True)
         
 @router.post('/login')
 async def login(request: Login, db: Session = Depends(get_db)):
@@ -36,12 +36,12 @@ async def login(request: Login, db: Session = Depends(get_db)):
         _user = UsersRepo.find_by_username(db, Users, request.username)
 
         if not pwd_context.verify(request.password, _user.password):
-            return ReponseSchema(code = "400", status = "Bad Request", message = "Invalid password").dict(exclude_none = True)
+            return ResponseSchema(code = "400", status = "Bad Request", message = "Invalid password").dict(exclude_none = True)
 
         token = JWTRepo.generate_token({'sub': _user.username})
-        return ReponseSchema(code = "200", status = "ok", message = "Seccess login", result = TokenResponse(access_token = token, token_type = "bearer").dict(exclude_none = True))
+        return ResponseSchema(code = "200", status = "ok", message = "Seccess login", result = TokenResponse(access_token = token, token_type = "bearer").dict(exclude_none = True))
     
     except Exception as error:
         error_message = str(error.args)
         print(error_message)
-        return ReponseSchema(code = "500", status = "Error", message = "Internal Server Error").dict(exclude_none = True)
+        return ResponseSchema(code = "500", status = "Error", message = "Internal Server Error").dict(exclude_none = True)
