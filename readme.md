@@ -17,6 +17,6 @@
 ตัว front เวลาจะเปิด ก็เปิด `venv` ก่อนแล้วก็ `cd front\website` แล้วก็ `npm run dev`
 
 `ถ้าจะทำ feature ใหม่ก็เปิด git bash` แล้วพิมพ์
-`git cheakout -b ชื่อฟีเจอร์ตั้งให้มีความหมาย\feature`
+`git checkout -b ชื่อฟีเจอร์ตั้งให้มีความหมาย\feature`
 
 # อย่า merge มั่วเด็ดขาด
