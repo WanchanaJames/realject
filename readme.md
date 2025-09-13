@@ -1,9 +1,10 @@
-# อย่า merge มั่วเด็ดขาด
+# ให้คลิกขวาแล้วเลือก markdown preview
 
 ### ถ้าต้องพิมพ์ command อะไรก็ตาม ต้อง terminal 
 ซึ่งมันที่อยู่ tap ด้านบนซ้ายของจอ หรือกด `Ctrl+Shift+ปุ่มเปลี่ยนภาษา` (คีย์ลัดนี้จะใช้ได้ก็ต่อเมื่อปุ่ม ` ไม่ได้ทำหน้าที่เป็นปุ่มเปลี่ยนภาษา) ตัวเลือกที่จะใช้บ่อยจะมี cmd, bash
 
 ### มาถึง ก็พิมพ์
+`py -m venv venv`
 `venv\Scripts\activate.bat`
 `pip install -r requirements.txt`
 
@@ -17,3 +18,5 @@
 
 `ถ้าจะทำ feature ใหม่ก็เปิด git bash` แล้วพิมพ์
 `git cheakout -b ชื่อฟีเจอร์ตั้งให้มีความหมาย\feature`
+
+# อย่า merge มั่วเด็ดขาด
