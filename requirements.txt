@@ -6,9 +6,9 @@ colorama==0.4.6
 ecdsa==0.19.1   
 fastapi==0.116.1
 greenlet==3.2.4 
-h11==0.16.0
-idna==3.10
-passlib==1.7.4
+h11==0.16.0     
+idna==3.10      
+passlib==1.7.4  
 psycopg2-binary==2.9.10
 pyasn1==0.6.1
 pydantic==2.11.7
