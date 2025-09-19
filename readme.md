@@ -2,8 +2,8 @@
 ซึ่งมันที่อยู่ tap ด้านบนซ้ายของจอ หรือกด `Ctrl+Shift+ปุ่มเปลี่ยนภาษา` (คีย์ลัดนี้จะใช้ได้ก็ต่อเมื่อปุ่ม ` ไม่ได้ทำหน้าที่เป็นปุ่มเปลี่ยนภาษา) ตัวเลือกที่จะใช้บ่อยจะมี cmd, bash
 
 ### มาถึง ก็พิมพ์
-`venv\Scripts\activate.bat`
-`pip install -r requirements.txt`
+venv\Scripts\activate.bat
+pip install -r requirements.txt
 
 ### fastapi ใช้ยิง api สื่อสารกันระหว่าง front-end กับ back-end 
 เวลาจะใช้ให้พิมพ์ว่า (ก่อนใช้ก็เปิด venv ก่อน) `uvicorn main:app --reload`
